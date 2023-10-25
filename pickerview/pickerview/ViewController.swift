@@ -34,5 +34,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var wheel: UIPickerView!
     @IBOutlet weak var value: UILabel!
     
+    
+    @IBAction func random() {
+        let newValue = Int.random(in: 0...9)
+        let newValue1 = Int.random(in: 0...9)
+        let newValue2 = Int.random(in: 0...9)
+        let newValue3 = Int.random(in: 0...9)
+        wheel.selectRow(newValue, inComponent: 0, animated: true)
+        wheel.selectRow(newValue1, inComponent: 1, animated: true)
+        wheel.selectRow(newValue2, inComponent: 2, animated: true)
+        wheel.selectRow(newValue3, inComponent: 3, animated: true)
+        
+        value.text = String(newValue) + String(newValue1) + String(newValue2) + String(newValue3)
+        
+        
+    }
+    
 }
 
